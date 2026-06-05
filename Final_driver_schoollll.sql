@@ -285,7 +285,7 @@ insert into driving_school.salary (instructor_id, payment_date, calculated_amoun
         '2026-03-31', 310000.00, '2026-03-01', false
     );
  
--- lessons (10 rows)
+-- lessons
 insert into driving_school.lessons (instructor_id, vehicle_id, student_id, lesson_date, duration_hours, hourly_rate, lesson_status) values
     (
         (select instructor_id from driving_school.instructors where email = 'bekzat.n@drivingschool.kz'),
@@ -420,7 +420,7 @@ from (
 where driving_school.lessons.instructor_id = top_instructors.instructor_id
   and driving_school.lessons.lesson_status = 'scheduled';
  
--- delete: remove cancelled lessons to keep schedule clean
+-- delete remove cancelled lessons to keep schedule clean
 begin;
 delete from driving_school.lessons
 where lesson_status = 'cancelled'
