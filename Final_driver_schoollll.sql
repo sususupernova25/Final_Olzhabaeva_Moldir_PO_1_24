@@ -396,8 +396,6 @@ insert into driving_school.exams (student_id, exam_type, exam_date, score, is_pa
         'theoretical', '2026-04-05', 72, true
     );
  
--- ===== PART 5: UPDATE + DELETE =====
- 
 -- update 1
 update driving_school.students
 set is_premium = true
